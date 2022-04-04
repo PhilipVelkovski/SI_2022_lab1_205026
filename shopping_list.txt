@@ -1,6 +1,12 @@
 Zelka X2
 Morkov  X 15kg
 Banani x5
+<<<<<<< HEAD
 Jagodi x 9
 Piper x 8kg
+=======
+Patlidzani x 4
+Piper x 12
+>>>>>>> branch2
 Nudli X 3
+Orevi x 2kg
