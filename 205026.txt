@@ -1,0 +1,718 @@
+205026 - Филип Велковски
+-----------------------------
+1. Со mdir креираме фолдер за Remote Repo
+2. git init иницилајизираме 
+3. git clone клонираме од Github локално на нашиот компјутер
+4. Креираме Shopping_list.txt и додаваме ставки
+5. Имаме Untracked Files
+6. git add . -- Ги додаваме на сцена 
+7. Спремнит се за commit, со git commit -m "(text)" изразуваме која била промеата.
+8. Git checkout -b branch1 - креираме гранка 1
+9. Git checkout -b branch2 - креираме гранка 2
+10. git pull во гранките - копии од мастерот
+11. Се прават соодветите промени во гранките
+12. Спојувањето на гранка-1 оди преку git merge branch1
+13.  Merge made by the 'ort' strategy
+14. Гранка 2 има конфликт бидејќи во неа имавме додано промени 
+   а потоа во master ги имавме променето - со fast forword се решава конфликтот
+15. push --all за да се прикачат сите на Girhup Repo. 
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1 (master)
+$ git status
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied         
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied  
+warning: could not open directory 'NetHood/': Permission denied       
+warning: could not open directory 'PrintHood/': Permission denied     
+warning: could not open directory 'Recent/': Permission denied        
+warning: could not open directory 'SendTo/': Permission denied        
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../.android/
+        ../../.bash_history
+        ../../.config/
+        ../../.dotnet/
+        ../../.gitconfig
+        ../../.gnupg/
+        ../../.jdks/
+        ../../.lesshst
+        ../../.librarymanager/
+        ../../.nuget/
+        ../../.viminfo
+        ../../.vscode/
+        ../../3D Objects/
+        ../../Add 5 items to the shopping list/
+        ../../AppData/
+        ../../Contacts/
+        ../../Desktop/
+        ../../Documents/
+        ../../Downloads/
+        ../../Favorites/
+        ../../GNS3/
+        ../../Google Drive/
+        ../
+        ../../IntelGraphicsProfiles/
+        ../../Links/
+        ../../Local Sites/
+        ../../MicrosoftEdgeBackups/
+        ../../Music/
+        ../../NTUSER.DAT
+        ../../NTUSER.DAT{d0573b9d-958a-11ec-8e41-b30ce1c8662c}.TxR.0.regtrans-ms
+        ../../NTUSER.DAT{d0573b9d-958a-11ec-8e41-b30ce1c8662c}.TxR.1.regtrans-ms
+        ../../NTUSER.DAT{d0573b9d-958a-11ec-8e41-b30ce1c8662c}.TxR.2.regtrans-ms
+        ../../NTUSER.DAT{d0573b9d-958a-11ec-8e41-b30ce1c8662c}.TxR.blf
+        ../../NTUSER.DAT{d0573b9e-958a-11ec-8e41-b30ce1c8662c}.TM.blf
+        ../../NTUSER.DAT{d0573b9e-958a-11ec-8e41-b30ce1c8662c}.TMContainer00000000000000000001.regtrans-ms
+        ../../NTUSER.DAT{d0573b9e-958a-11ec-8e41-b30ce1c8662c}.TMContainer00000000000000000002.regtrans-ms
+        ../../New folder (2)/
+        ../../New folder/
+        ../../OneDrive/
+        ../../Pictures/
+        ../../SI_lab1/
+        ../../Saved Games/
+        ../../Searches/
+        ../../Videos/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+        ../../source/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1 (master)
+$ mkdir SI_remote
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1 (master)
+$ cd SI_remote
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git init
+Initialized empty Git repository in C:/Users/Lofi/IdeaProjects/SI_LAB_1/SI_remote/.git/
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git clone https://github.com/PhilipVelkovski/SI_2022_lab1_205026.git
+Cloning into 'SI_2022_lab1_205026'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        SI_2022_lab1_205026/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git add .
+warning: adding embedded git repository: SI_2022_lab1_205026
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint:   git submodule add <url> SI_2022_lab1_205026
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint:   git rm --cached SI_2022_lab1_205026
+hint: 
+hint: See "git help submodule" for more information.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git rm --cached SI_2022_lab1_205026
+error: the following file has staged content different from both the
+file and the HEAD:
+    SI_2022_lab1_205026
+(use -f to force removal)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   SI_2022_lab1_205026
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git rm --cached SI_2022_lab1_205026
+error: the following file has staged content different from both the
+file and the HEAD:
+    SI_2022_lab1_205026
+(use -f to force removal)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ -f
+bash: -f: command not found
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git rm -f --cached SI_2022_lab1_205026
+rm 'SI_2022_lab1_205026'
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        SI_2022_lab1_205026/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        SI_2022_lab1_205026/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ git add SI_2022_lab1_205026
+warning: adding embedded git repository: SI_2022_lab1_205026
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint:   git submodule add <url> SI_2022_lab1_205026
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint:   git rm --cached SI_2022_lab1_205026
+hint: 
+hint: See "git help submodule" for more information.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote (master)
+$ cd SI_2022_lab1_205026
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        shopping_list.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git add . 
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git commit -m "Add 5 items to the shopping list"
+[master ab1d5a2] Add 5 items to the shopping list
+ 1 file changed, 6 insertions(+)
+ create mode 100644 shopping_list.txt
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git commit -m "Add quantities to the items"
+[master 05076e2] “AA quantities to the items.â
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git branch 
+* master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git branch
+  branch1
+* branch2
+  master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> branch2
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 683 bytes | 683.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/PhilipVelkovski/SI_2022_lab1_205026.git
+   9fe0ac4..05076e2  master -> master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git branch
+  branch1
+  branch2
+* master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch1)
+$ git status
+On branch branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch1)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch1)
+$ git commit -m "Change quantity of item #5"
+[branch1 db3e933] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git commit -m "Change quantity of item #2"
+[master 2ae6563] Change quantity of item #2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 363 bytes | 363.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/PhilipVelkovski/SI_2022_lab1_205026.git
+   05076e2..2ae6563  master -> master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git fetch upstream
+fatal: 'upstream' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git bracnh
+git: 'bracnh' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git branch
+  branch1
+  branch2
+* master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git status
+On branch branch2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git commit -m "Modify item #4"
+[branch2 34183c1] Modify item #4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git reset --soft HEAD~1
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git status
+On branch branch2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   shopping_list.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git commit -m "Modify item #4 and add item #6"
+error: pathspec 'item' did not match any file(s) known to git
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git commit -m "Modify item #4 and add item #6"
+[branch2 b7c590e] Modify item #4 and add item #6
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git branch
+  branch1
+  branch2
+* master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git merge branch1
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git merge branch2 --ff
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git merge branch2 -ff
+error: unknown switch `f'
+usage: git merge [<options>] [<commit>...]
+   or: git merge --abort
+   or: git merge --continue
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -F, --file <path>     read message from file
+    --into-name <name>    use <name> instead of the real target
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --quit                --abort but leave index and working tree alone
+    --continue            continue the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --autostash           automatically stash/stash pop before and after
+    --overwrite-ignore    update ignored files (default)
+    --signoff             add a Signed-off-by trailer
+    --no-verify           bypass pre-merge-commit and commit-msg hooks
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git merge --ff-only branch2
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git merge --ff branch2
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git log --oneline --graph --all
+*   ff589da (HEAD -> master) Merge branch 'branch1'
+|\
+| * db3e933 (branch1) Change quantity of item #5
+* | 2ae6563 (origin/master, origin/HEAD) Change quantity of item #2
+|/
+| * b7c590e (branch2) Modify item #4 and add item #6
+|/
+* 05076e2 “AA quantities to the items.â
+* ab1d5a2 Add 5 items to the shopping list
+* 9fe0ac4 Initial commit
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git add .
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   shopping_list.txt
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git diff
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git reset shopping_list.txt
+Unstaged changes after reset:
+M       shopping_list.txt
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git statys
+git: 'statys' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git log --merge
+commit ff589da3a0362f34138a89d82d77c110ee73f2c7 (HEAD -> master)
+Merge: 2ae6563 db3e933
+Author: Philip <philipvelkovski@gmail.com>
+Date:   Mon Apr 4 11:36:20 2022 +0200
+
+    Merge branch 'branch1'
+
+commit b7c590e457e4adab8c2103128c6c9a038243c8c4 (branch2)
+Author: Philip <philipvelkovski@gmail.com>
+Date:   Mon Apr 4 11:35:38 2022 +0200
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git diff
+diff --git a/shopping_list.txt b/shopping_list.txt
+index ea955af..435d74b 100644
+--- a/shopping_list.txt
++++ b/shopping_list.txt
+@@ -1,6 +1,12 @@
+ Zelka X2
+ Morkov  X 15kg
+ Banani x5
++<<<<<<< HEAD
+ Jagodi x 9
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git merge branch2
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master|MERGING)
+$ git commit -m "Merge branch2 wit Master"
+[master 2c3b666] Merge branch2 wit Master
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lofi@DESKTOP-TAFDL9I MINGW64 ~/IdeaProjects/SI_LAB_1/SI_remote/SI_2022_lab1_205026 (master)
+$
